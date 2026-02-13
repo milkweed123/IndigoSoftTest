@@ -1,7 +1,7 @@
 namespace TradingAggregator.Application.DTOs;
 
 /// <summary>
-/// DTO свечей для ответов API.
+/// DTO for candles in API responses.
 /// </summary>
 public sealed class CandleDto
 {

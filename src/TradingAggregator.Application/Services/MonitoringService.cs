@@ -4,8 +4,8 @@ using TradingAggregator.Domain.Interfaces;
 namespace TradingAggregator.Application.Services;
 
 /// <summary>
-/// Предоставляет статистику системы и информацию о состоянии, агрегируя данные из
-/// <see cref="IMetricsCollector"/> и репозиториев статусов бирж.
+/// Provides system statistics and status information by aggregating data from
+/// <see cref="IMetricsCollector"/> and exchange status repositories.
 /// </summary>
 public sealed class MonitoringService
 {
@@ -24,7 +24,7 @@ public sealed class MonitoringService
     }
 
     /// <summary>
-    /// Создаёт снимок текущей статистики системы.
+    /// Creates a snapshot of current system statistics.
     /// </summary>
     public async Task<StatisticsDto> GetStatisticsAsync(CancellationToken cancellationToken)
     {

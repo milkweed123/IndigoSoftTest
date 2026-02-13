@@ -7,7 +7,7 @@ using TradingAggregator.Domain.Interfaces;
 namespace TradingAggregator.Infrastructure.ExchangeAdapters;
 
 /// <summary>
-/// REST API адаптер для OKX с периодическим polling.
+/// REST API adapter for OKX with periodic polling.
 /// </summary>
 public sealed class OkxRestAdapter : BaseExchangeAdapter
 {

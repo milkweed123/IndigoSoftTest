@@ -59,10 +59,6 @@ public class CandleRepository : ICandleRepository
         if (candleList.Count == 0)
             return;
 
-        // ВАЖНО: EFCore.BulkExtensions НЕ поддерживает HasConversion для enum -> string
-        // Поэтому используем стандартный EF Core метод, который корректно применяет конвертацию
-        // Interval конвертируется: OneMinute -> "1m", FiveMinutes -> "5m", OneHour -> "1h"
-
         _logger.LogDebug("Upserting {Count} candles (using EF Core with HasConversion)", candleList.Count);
 
         foreach (var candle in candleList)

@@ -28,9 +28,9 @@ public class ExchangeAdapterFactory
     }
 
     /// <summary>
-    /// Создаёт все включённые адаптеры бирж на основе конфигурации.
+    /// Creates all enabled exchange adapters based on configuration.
     ///
-    /// Ожидаемая секция конфигурации:
+    /// Expected configuration section:
     /// "ExchangeAdapters": {
     ///   "BinanceWebSocket": { "Enabled": true },
     ///   "BinanceRest": { "Enabled": true, "PollingIntervalSeconds": 5 },

@@ -5,7 +5,7 @@ using TradingAggregator.Application.Services;
 namespace TradingAggregator.API.Controllers;
 
 /// <summary>
-/// Предоставляет мониторинг системы, проверки работоспособности и информацию о статусе бирж.
+/// Provides system monitoring, health checks, and exchange status information.
 /// </summary>
 [ApiController]
 [Route("api/[controller]")]
@@ -24,11 +24,11 @@ public class MonitoringController : ControllerBase
     }
 
     /// <summary>
-    /// Получает комплексную статистику системы, включая метрики обработки тиков,
-    /// статус бирж и показатели производительности.
+    /// Gets comprehensive system statistics, including tick processing metrics,
+    /// exchange status, and performance indicators.
     /// </summary>
-    /// <param name="cancellationToken">Токен отмены</param>
-    /// <returns>Снимок статистики системы</returns>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>System statistics snapshot</returns>
     [HttpGet("statistics")]
     [ProducesResponseType(typeof(StatisticsDto), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -55,10 +55,10 @@ public class MonitoringController : ControllerBase
     }
 
     /// <summary>
-    /// Получает текущий статус подключения всех настроенных адаптеров бирж.
+    /// Gets the current connection status of all configured exchange adapters.
     /// </summary>
-    /// <param name="cancellationToken">Токен отмены</param>
-    /// <returns>Список статусов бирж</returns>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>List of exchange statuses</returns>
     [HttpGet("exchange-status")]
     [ProducesResponseType(typeof(IEnumerable<ExchangeStatusDto>), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -85,9 +85,9 @@ public class MonitoringController : ControllerBase
     }
 
     /// <summary>
-    /// Простая конечная точка проверки работоспособности, которая возвращает статус службы.
+    /// Simple health check endpoint that returns service status.
     /// </summary>
-    /// <returns>Статус работоспособности</returns>
+    /// <returns>Health status</returns>
     [HttpGet("health")]
     [ProducesResponseType(typeof(HealthResponse), StatusCodes.Status200OK)]
     public ActionResult<HealthResponse> GetHealth()
@@ -102,7 +102,7 @@ public class MonitoringController : ControllerBase
 }
 
 /// <summary>
-/// Объект передачи данных для ответов проверки работоспособности.
+/// Data transfer object for health check responses.
 /// </summary>
 public class HealthResponse
 {

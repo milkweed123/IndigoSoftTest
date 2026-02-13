@@ -7,7 +7,7 @@ using TradingAggregator.Domain.Interfaces;
 namespace TradingAggregator.Infrastructure.ExchangeAdapters;
 
 /// <summary>
-/// REST API адаптер для Bybit с периодическим polling.
+/// REST API adapter for Bybit with periodic polling.
 /// </summary>
 public sealed class BybitRestAdapter : BaseExchangeAdapter
 {

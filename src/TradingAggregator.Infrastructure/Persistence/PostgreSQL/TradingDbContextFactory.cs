@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Design;
 namespace TradingAggregator.Infrastructure.Persistence.PostgreSQL;
 
 /// <summary>
-/// Фабрика для создания DbContext на этапе разработки (для миграций)
+/// Factory for creating DbContext at design time (for migrations)
 /// </summary>
 public class TradingDbContextFactory : IDesignTimeDbContextFactory<TradingDbContext>
 {

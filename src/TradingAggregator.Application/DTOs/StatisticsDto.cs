@@ -1,7 +1,7 @@
 namespace TradingAggregator.Application.DTOs;
 
 /// <summary>
-/// DTO статистики мониторинга системы.
+/// DTO for system monitoring statistics.
 /// </summary>
 public sealed class StatisticsDto
 {
@@ -20,7 +20,7 @@ public sealed class StatisticsDto
 }
 
 /// <summary>
-/// DTO статуса подключения отдельной биржи.
+/// DTO for individual exchange connection status.
 /// </summary>
 public sealed class ExchangeStatusDto
 {

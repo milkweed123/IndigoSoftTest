@@ -3,8 +3,8 @@ using TradingAggregator.Application.Services;
 namespace TradingAggregator.API.BackgroundServices;
 
 /// <summary>
-/// Фоновая служба, которая периодически сбрасывает агрегированные свечи и буферизованные тики
-/// в постоянное хранилище через <see cref="Application.Services.DataAggregationService"/>.
+/// Background service that periodically flushes aggregated candles and buffered ticks
+/// to persistent storage via <see cref="Application.Services.DataAggregationService"/>.
 /// </summary>
 public class DataAggregatorService : BackgroundService
 {

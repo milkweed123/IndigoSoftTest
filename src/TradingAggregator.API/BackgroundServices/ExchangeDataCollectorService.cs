@@ -8,8 +8,8 @@ using TradingAggregator.Infrastructure.ExchangeAdapters;
 namespace TradingAggregator.API.BackgroundServices;
 
 /// <summary>
-/// Фоновая служба, которая запускает все настроенные адаптеры бирж,
-/// инициализирует конвейер обработки тиков и отслеживает состояние адаптеров.
+/// Background service that starts all configured exchange adapters,
+/// initializes the tick processing pipeline, and monitors adapter status.
 /// </summary>
 public class ExchangeDataCollectorService : BackgroundService
 {

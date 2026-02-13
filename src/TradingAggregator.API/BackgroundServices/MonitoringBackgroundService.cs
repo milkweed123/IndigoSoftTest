@@ -3,8 +3,8 @@ using TradingAggregator.Domain.Interfaces;
 namespace TradingAggregator.API.BackgroundServices;
 
 /// <summary>
-/// Фоновая служба, которая периодически записывает в журнал статистику производительности системы
-/// и метрики для целей мониторинга и отладки.
+/// Background service that periodically logs system performance statistics
+/// and metrics for monitoring and debugging purposes.
 /// </summary>
 public class MonitoringBackgroundService : BackgroundService
 {

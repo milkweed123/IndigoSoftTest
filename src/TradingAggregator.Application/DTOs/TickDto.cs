@@ -1,7 +1,7 @@
 namespace TradingAggregator.Application.DTOs;
 
 /// <summary>
-/// DTO тиковых данных для ответов API.
+/// DTO for tick data in API responses.
 /// </summary>
 public sealed class TickDto
 {

@@ -7,17 +7,17 @@ public sealed class AggregationOptions
     public const string SectionName = "Aggregation";
 
     /// <summary>
-    /// Максимальное количество тиков в буфере перед сбросом в хранилище.
+    /// Maximum number of ticks in buffer before flushing to storage.
     /// </summary>
     public int TickBufferSize { get; set; } = 500;
 
     /// <summary>
-    /// Интервал в секундах, через который буферизованные тики сбрасываются в хранилище.
+    /// Interval in seconds at which buffered ticks are flushed to storage.
     /// </summary>
     public int FlushIntervalSeconds { get; set; } = 10;
 
     /// <summary>
-    /// Временные интервалы для вычисления свечей.
+    /// Time intervals for calculating candles.
     /// </summary>
     public List<TimeInterval> CandleIntervals { get; set; } =
     [
@@ -27,7 +27,7 @@ public sealed class AggregationOptions
     ];
 
     /// <summary>
-    /// Максимальный возраст (в минутах) свечей в памяти перед вытеснением.
+    /// Maximum age (in minutes) of candles in memory before eviction.
     /// </summary>
     public int InMemoryCandleRetentionMinutes { get; set; } = 120;
 }

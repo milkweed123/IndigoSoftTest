@@ -5,8 +5,8 @@ using Npgsql;
 namespace TradingAggregator.Infrastructure.Persistence.PostgreSQL;
 
 /// <summary>
-/// Управляет партициями таблицы ticks в PostgreSQL.
-/// Автоматически создает новые партиции и удаляет старые согласно retention policy.
+/// Manages tick table partitions in PostgreSQL.
+/// Automatically creates new partitions and removes old ones according to retention policy.
 /// </summary>
 public class PartitionManager
 {
@@ -20,8 +20,8 @@ public class PartitionManager
     }
 
     /// <summary>
-    /// Применяет партиционирование к таблице ticks.
-    /// ВНИМАНИЕ: Эта операция может занять время на больших таблицах.
+    /// Applies partitioning to the ticks table.
+    /// WARNING: This operation may take time on large tables.
     /// </summary>
     public async Task ApplyPartitioningAsync(CancellationToken cancellationToken = default)
     {
@@ -61,7 +61,7 @@ public class PartitionManager
     }
 
     /// <summary>
-    /// Создает партиции для будущих дат (next N days).
+    /// Creates partitions for future dates (next N days).
     /// </summary>
     public async Task EnsureFuturePartitionsAsync(
         int daysAhead = 7,
@@ -98,7 +98,7 @@ public class PartitionManager
     }
 
     /// <summary>
-    /// Удаляет старые партиции согласно retention policy.
+    /// Removes old partitions according to retention policy.
     /// </summary>
     public async Task DropOldPartitionsAsync(
         int retentionDays = 30,
@@ -135,7 +135,7 @@ public class PartitionManager
     }
 
     /// <summary>
-    /// Возвращает список всех партиций таблицы ticks.
+    /// Returns a list of all tick table partitions.
     /// </summary>
     public async Task<IReadOnlyList<PartitionInfo>> GetPartitionsAsync(
         CancellationToken cancellationToken = default)

@@ -8,8 +8,8 @@ using TradingAggregator.Domain.Interfaces;
 namespace TradingAggregator.Application.Services;
 
 /// <summary>
-/// Проверяет каждый входящий тик на соответствие активным правилам оповещений
-/// и отправляет уведомления при срабатывании правил.
+/// Validates each incoming tick against active alert rules
+/// and sends notifications when rules are triggered.
 /// </summary>
 public sealed class AlertService : ITickPipelineHandler
 {
@@ -22,8 +22,8 @@ public sealed class AlertService : ITickPipelineHandler
     private readonly ILogger<AlertService> _logger;
 
     /// <summary>
-    /// Отслеживает время последнего срабатывания каждого правила для контроля периода ожидания.
-    /// Ключ = AlertRule.Id, Значение = время последнего срабатывания (UTC).
+    /// Tracks the last trigger time for each rule to control cooldown period.
+    /// Key = AlertRule.Id, Value = last trigger time (UTC).
     /// </summary>
     private readonly Dictionary<int, DateTime> _lastTriggered = new();
 

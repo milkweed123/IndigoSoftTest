@@ -10,19 +10,19 @@ using TradingAggregator.Domain.Interfaces;
 namespace TradingAggregator.Application.Services;
 
 /// <summary>
-/// Агрегирует входящие тики в OHLCV-свечи и периодически сбрасывает
-/// завершённые свечи в <see cref="ICandleRepository"/>.
-/// Сырые тики буферизуются и вставляются пакетно через <see cref="ITickRepository"/>.
+/// Aggregates incoming ticks into OHLCV candles and periodically flushes
+/// completed candles to <see cref="ICandleRepository"/>.
+/// Raw ticks are buffered and inserted in batches via <see cref="ITickRepository"/>.
 /// </summary>
 public sealed class DataAggregationService : ITickPipelineHandler, IAsyncDisposable
 {
     /// <summary>
-    /// Составной ключ для словаря свечей в памяти.
+    /// Composite key for in-memory candle dictionary.
     /// </summary>
     private readonly record struct CandleKey(int InstrumentId, TimeInterval Interval, DateTime OpenTime);
 
     /// <summary>
-    /// Составной ключ для кэша инструментов.
+    /// Composite key for instrument cache.
     /// </summary>
     private readonly record struct InstrumentKey(string Symbol, ExchangeType Exchange);
 
@@ -109,7 +109,7 @@ public sealed class DataAggregationService : ITickPipelineHandler, IAsyncDisposa
     }
 
     /// <summary>
-    /// Сбрасывает завершённые свечи и буферизованные тики в хранилище.
+    /// Flushes completed candles and buffered ticks to storage.
     /// </summary>
     public async Task FlushAsync(CancellationToken cancellationToken)
     {

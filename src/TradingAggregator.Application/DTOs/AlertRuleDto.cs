@@ -1,7 +1,7 @@
 namespace TradingAggregator.Application.DTOs;
 
 /// <summary>
-/// DTO правила оповещения для ответов API.
+/// DTO for alert rule in API responses.
 /// </summary>
 public sealed class AlertRuleResponseDto
 {
@@ -18,7 +18,7 @@ public sealed class AlertRuleResponseDto
 }
 
 /// <summary>
-/// DTO для создания нового правила оповещения.
+/// DTO for creating a new alert rule.
 /// </summary>
 public sealed class CreateAlertRuleDto
 {
@@ -30,7 +30,7 @@ public sealed class CreateAlertRuleDto
 }
 
 /// <summary>
-/// DTO для обновления существующего правила оповещения.
+/// DTO for updating an existing alert rule.
 /// </summary>
 public sealed class UpdateAlertRuleDto
 {

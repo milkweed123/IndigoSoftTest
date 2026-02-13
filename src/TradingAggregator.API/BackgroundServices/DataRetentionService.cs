@@ -3,10 +3,10 @@ using TradingAggregator.Infrastructure.Persistence.PostgreSQL;
 namespace TradingAggregator.API.BackgroundServices;
 
 /// <summary>
-/// Фоновая служба для управления жизненным циклом партиций таблицы ticks.
-/// - Создает партиции для будущих дат
-/// - Удаляет старые партиции согласно retention policy
-/// - Выполняется ежедневно
+/// Background service for managing the lifecycle of tick table partitions.
+/// - Creates partitions for future dates
+/// - Deletes old partitions according to retention policy
+/// - Runs daily
 /// </summary>
 public class DataRetentionService : BackgroundService
 {

@@ -8,7 +8,7 @@ using TradingAggregator.Domain.Interfaces;
 namespace TradingAggregator.API.Controllers;
 
 /// <summary>
-/// Управляет правилами оповещений и предоставляет доступ к истории оповещений.
+/// Manages alert rules and provides access to alert history.
 /// </summary>
 [ApiController]
 [Route("api/[controller]")]
@@ -36,11 +36,11 @@ public class AlertsController : ControllerBase
     }
 
     /// <summary>
-    /// Создаёт новое правило оповещения.
+    /// Creates a new alert rule.
     /// </summary>
-    /// <param name="dto">Данные для создания правила оповещения</param>
-    /// <param name="cancellationToken">Токен отмены</param>
-    /// <returns>Созданное правило оповещения</returns>
+    /// <param name="dto">Data for creating the alert rule</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Created alert rule</returns>
     [HttpPost("rules")]
     [ProducesResponseType(typeof(AlertRuleResponseDto), StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -104,10 +104,10 @@ public class AlertsController : ControllerBase
     }
 
     /// <summary>
-    /// Получает все активные правила оповещений.
+    /// Gets all active alert rules.
     /// </summary>
-    /// <param name="cancellationToken">Токен отмены</param>
-    /// <returns>Список правил оповещений</returns>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>List of alert rules</returns>
     [HttpGet("rules")]
     [ProducesResponseType(typeof(IEnumerable<AlertRuleResponseDto>), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -146,11 +146,11 @@ public class AlertsController : ControllerBase
     }
 
     /// <summary>
-    /// Получает конкретное правило оповещения по его идентификатору.
+    /// Gets a specific alert rule by its identifier.
     /// </summary>
-    /// <param name="id">Идентификатор правила оповещения</param>
-    /// <param name="cancellationToken">Токен отмены</param>
-    /// <returns>Детали правила оповещения</returns>
+    /// <param name="id">Alert rule identifier</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Alert rule details</returns>
     [HttpGet("rules/{id}")]
     [ProducesResponseType(typeof(AlertRuleResponseDto), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -191,12 +191,12 @@ public class AlertsController : ControllerBase
     }
 
     /// <summary>
-    /// Обновляет существующее правило оповещения.
+    /// Updates an existing alert rule.
     /// </summary>
-    /// <param name="id">Идентификатор правила оповещения</param>
-    /// <param name="dto">Данные для обновления</param>
-    /// <param name="cancellationToken">Токен отмены</param>
-    /// <returns>Обновлённое правило оповещения</returns>
+    /// <param name="id">Alert rule identifier</param>
+    /// <param name="dto">Update data</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Updated alert rule</returns>
     [HttpPut("rules/{id}")]
     [ProducesResponseType(typeof(AlertRuleResponseDto), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -252,11 +252,11 @@ public class AlertsController : ControllerBase
     }
 
     /// <summary>
-    /// Удаляет правило оповещения.
+    /// Deletes an alert rule.
     /// </summary>
-    /// <param name="id">Идентификатор правила оповещения</param>
-    /// <param name="cancellationToken">Токен отмены</param>
-    /// <returns>Пустой результат при успехе</returns>
+    /// <param name="id">Alert rule identifier</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Empty result on success</returns>
     [HttpDelete("rules/{id}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -293,13 +293,13 @@ public class AlertsController : ControllerBase
     }
 
     /// <summary>
-    /// Получает историю оповещений с опциональной фильтрацией по временному диапазону.
+    /// Gets alert history with optional filtering by time range.
     /// </summary>
-    /// <param name="from">Начальная временная метка (UTC, опционально)</param>
-    /// <param name="to">Конечная временная метка (UTC, опционально)</param>
-    /// <param name="limit">Максимальное количество результатов (по умолчанию: 100, максимум: 1000)</param>
-    /// <param name="cancellationToken">Токен отмены</param>
-    /// <returns>Список записей истории оповещений</returns>
+    /// <param name="from">Start timestamp (UTC, optional)</param>
+    /// <param name="to">End timestamp (UTC, optional)</param>
+    /// <param name="limit">Maximum number of results (default: 100, max: 1000)</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>List of alert history records</returns>
     [HttpGet("history")]
     [ProducesResponseType(typeof(IEnumerable<AlertHistoryDto>), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -343,7 +343,7 @@ public class AlertsController : ControllerBase
 }
 
 /// <summary>
-/// Объект передачи данных для записей истории оповещений.
+/// Data transfer object for alert history records.
 /// </summary>
 public class AlertHistoryDto
 {

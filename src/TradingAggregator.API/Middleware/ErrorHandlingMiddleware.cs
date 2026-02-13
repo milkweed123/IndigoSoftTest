@@ -5,8 +5,8 @@ using TradingAggregator.Domain.Exceptions;
 namespace TradingAggregator.API.Middleware;
 
 /// <summary>
-/// Промежуточное middleware глобальной обработки исключений, которое перехватывает все необработанные исключения
-/// и возвращает стандартизированные JSON-ответы с ошибками.
+/// Global exception handling middleware that intercepts all unhandled exceptions
+/// and returns standardized JSON error responses.
 /// </summary>
 public class ErrorHandlingMiddleware
 {
@@ -127,7 +127,7 @@ public class ErrorHandlingMiddleware
 }
 
 /// <summary>
-/// Стандартизированный формат ответа с ошибкой.
+/// Standardized error response format.
 /// </summary>
 public class ErrorResponse
 {

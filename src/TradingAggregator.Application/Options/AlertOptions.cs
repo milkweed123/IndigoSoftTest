@@ -5,17 +5,17 @@ public sealed class AlertOptions
     public const string SectionName = "Alerts";
 
     /// <summary>
-    /// Минимальный интервал между повторными уведомлениями для одного правила, в секундах.
+    /// Minimum interval between repeat notifications for one rule, in seconds.
     /// </summary>
     public int CooldownSeconds { get; set; } = 300;
 
     /// <summary>
-    /// Максимальное количество одновременных отправок уведомлений.
+    /// Maximum number of concurrent notification sends.
     /// </summary>
     public int MaxConcurrentNotifications { get; set; } = 10;
 
     /// <summary>
-    /// Настроенные каналы уведомлений.
+    /// Configured notification channels.
     /// </summary>
     public List<NotificationChannelConfig> Channels { get; set; } = [];
 }
@@ -29,7 +29,7 @@ public sealed class NotificationChannelConfig
     public bool IsEnabled { get; set; } = true;
 
     /// <summary>
-    /// Настройки канала (например, URL вебхука, email-адрес).
+    /// Channel settings (e.g., webhook URL, email address).
     /// </summary>
     public Dictionary<string, string> Settings { get; set; } = new();
 }

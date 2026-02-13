@@ -6,7 +6,7 @@ using TradingAggregator.Domain.Enums;
 namespace TradingAggregator.Application.Mappings;
 
 /// <summary>
-/// Профиль маппинга AutoMapper для конвертации между entities и DTOs
+/// AutoMapper mapping profile for converting between entities and DTOs
 /// </summary>
 public class MappingProfile : Profile
 {
@@ -49,7 +49,7 @@ public class MappingProfile : Profile
 }
 
 /// <summary>
-/// DTO истории оповещений
+/// DTO for alert history
 /// </summary>
 public class AlertHistoryDto
 {
@@ -61,7 +61,7 @@ public class AlertHistoryDto
 }
 
 /// <summary>
-/// DTO метаданных инструмента
+/// DTO for instrument metadata
 /// </summary>
 public class InstrumentDto
 {

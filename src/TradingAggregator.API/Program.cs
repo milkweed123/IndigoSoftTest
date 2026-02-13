@@ -36,7 +36,7 @@ builder.Host.UseSerilog();
 builder.Services.AddControllers()
     .AddJsonOptions(options =>
     {
-        // Конвертируем enum в строки для JSON (вместо чисел)
+        // Convert enums to strings for JSON (instead of numbers)
         options.JsonSerializerOptions.Converters.Add(new System.Text.Json.Serialization.JsonStringEnumConverter());
     });
 
@@ -50,10 +50,10 @@ builder.Services.AddSwaggerGen(options =>
         Description = "REST API for accessing aggregated cryptocurrency market data from multiple exchanges"
     });
 
-    // Показываем enum как строки в Swagger UI (dropdown вместо цифр)
+    // Show enums as strings in Swagger UI (dropdown instead of numbers)
     options.UseInlineDefinitionsForEnums();
 
-    // Добавляем XML комментарии для лучшей документации
+    // Add XML comments for better documentation
     var xmlFile = $"{System.Reflection.Assembly.GetExecutingAssembly().GetName().Name}.xml";
     var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
     if (File.Exists(xmlPath))

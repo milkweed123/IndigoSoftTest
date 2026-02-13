@@ -30,7 +30,7 @@ public class RedisDeduplicator : IDeduplicator
 
         if (wasAdded)
         {
-            // Устанавливаем TTL только если ключ новый
+            // Set TTL only if key is new
             await db.KeyExpireAsync(key, KeyTtl);
 
             _logger.LogTrace("Tick is unique: {DeduplicationKey}", member);

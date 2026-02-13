@@ -7,7 +7,7 @@ using TradingAggregator.Domain.Interfaces;
 namespace TradingAggregator.API.Controllers;
 
 /// <summary>
-/// Предоставляет доступ к необработанным тиковым данным с поддержкой фильтрации и пагинации.
+/// Provides access to raw tick data with filtering and pagination support.
 /// </summary>
 [ApiController]
 [Route("api/[controller]")]
